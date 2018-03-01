@@ -22,4 +22,32 @@ September 2016.".
 如果键已经存在于字典内，为键所对应的值加上对应数值；
 如果键不存在于字典内，将此键加入字典，并将它的值设为给定值。
 """
+#build a dict to calculate the total time of the same telephone number.
+telephone_time = {}
 
+for element in calls:
+	if element[0] not in telephone_time:
+		telephone_time[element[0]] += element[3]
+	elif element[1] not in telephone_time:
+		telephone_time[element[1]] += element[3]
+	else:
+		continue
+
+#judge the longest time in telephone_time. 
+#Do not consider the situation of telephone number over 2.
+longest_time = 0
+
+for telephone in telephone_time:
+	if longest_time <= telephone_time[telephone]:
+		longest_time = telephone_time[telephone]
+	else:
+		continue
+		
+for telephone in telephone_time:
+	if longest_time == telephone_time[telephone]:
+		telephone_number = telephone
+	else:
+		continue
+		
+#output the result.
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(telephone_number, longest_time))
