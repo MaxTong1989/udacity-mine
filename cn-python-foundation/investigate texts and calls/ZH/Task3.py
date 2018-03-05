@@ -93,17 +93,14 @@ def remove_same_codes(code_list):
 			continue
 	return target_code_list
 	
-#define a function to fullfill the output requirements.	
-def part1_output(input_call_dict):
-	Bangalore_call_list = Bangalore_call(input_call_dict)
+#PART 1	
+
+	Bangalore_call_list = Bangalore_call(calls)
 	code_list = call_codes(Bangalore_call_list)
 	target_code_list = remove_same_code(code_list)
 	print("The numbers called by people in Bangalore have codes:")
 	print(target_code_list.join("\n")
-	return None
 
-#PART ONE
-output_part1(calls)
 	
 
 #get the counts of Bangalore called  Bangalore.
@@ -116,13 +113,10 @@ def B2B_call_count(code_list):
 			continue
 	return n
 	
-def output_part2(input_list):
-	Bangalore_call_list = Bangalore_call(input_dict)#get all Bangalore called phone numbers.
+#PART 2
+	Bangalore_call_list = Bangalore_call(calls)#get all Bangalore called phone numbers.
 	code_list = call_codes(Bangalore_call_list)#get the number codes
 	B2B_call_counts = B2B_call_count(code_list)
 	call_rate = B2B_call_counts / len(code_list)
 	print("{.2f} percent of calls from fixed lines in Bangalore are calls
 to other fixed lines in Bangalore.".format(call_rate))
-	return None
-#PART TWO
-output_part2(calls)

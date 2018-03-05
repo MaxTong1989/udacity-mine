@@ -42,7 +42,8 @@ for telephone in telephone_time:
 		longest_time = telephone_time[telephone]
 	else:
 		continue
-		
+
+		#judge the telephone number which calls the longest time. 		
 for telephone in telephone_time:
 	if longest_time == telephone_time[telephone]:
 		telephone_number = telephone
